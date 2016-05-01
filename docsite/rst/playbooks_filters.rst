@@ -457,6 +457,28 @@ which will produce this output::
     # host: myhost
     #
 
+.. _spatial_filter:
+
+Spatial Filters
+--------------
+
+.. versionadded:: 2.0
+
+The `comment` filter allows to decorate the text with a chosen comment
+style. For example the following::
+
+    {{ "-10,-30,10,30" | bbox_to_wkt  }}
+    {{ "-10,-30,10,30" | west }}
+    {{ "-10,-30,10,30" | south }}
+    {{ "-10,-30,10,30" | east }}
+    {{ "-10,-30,10,30" | north }}
+    {{ 11 | zoom_to_resolution }}
+    {{ 4.77731426696777372598 | zoom_to_resolution }}
+
+will produce this output::
+
+  TBD
+
 .. _other_useful_filters:
 
 Other Useful Filters
@@ -464,7 +486,7 @@ Other Useful Filters
 
 To add quotes for shell usage::
 
-    - shell: echo {{ string_value | quote }} 
+    - shell: echo {{ string_value | quote }}
 
 To use one value on true and another on false (new in version 1.9)::
 
@@ -602,5 +624,3 @@ to be added to core so everyone can make use of them.
        Have a question?  Stop by the google group!
    `irc.freenode.net <http://irc.freenode.net>`_
        #ansible IRC chat channel
-
-
